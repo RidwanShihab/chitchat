@@ -1,9 +1,10 @@
 <?php
-
+session_start();
 include 'config.php';
 //Variables using $ sign
 $status = $_POST['post_status'];
-
+$details =$_SESSION["myid"];
+$nam= $details['Username'];
     
 
 
@@ -14,7 +15,7 @@ $status = $_POST['post_status'];
     } 
     else {
 
-        $Insert = "insert into status (status) values('$status')";
+        $Insert = "insert into status (status, fname) values('$status','$nam')";
 
         //insert values in DB
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2021 at 07:00 PM
+-- Generation Time: Dec 11, 2021 at 08:46 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.1.27
 
@@ -21,6 +21,33 @@ SET time_zone = "+00:00";
 --
 -- Database: `doctormd_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `status`
+--
+
+CREATE TABLE `status` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `status` text NOT NULL,
+  `time_stamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `fname` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `status`
+--
+
+INSERT INTO `status` (`id`, `user_id`, `status`, `time_stamp`, `fname`) VALUES
+(1, 0, 'kutte', '2021-12-11 18:25:00', 'tuhin'),
+(2, 0, 'abar elo j sondha', '2021-12-11 19:20:47', ''),
+(3, 0, 'sudhu dujone', '2021-12-11 19:23:28', 'rid'),
+(4, 0, 'helo', '2021-12-11 19:33:30', 'Sadaf'),
+(5, 0, 'are', '2021-12-11 19:33:58', 'Shihab'),
+(6, 0, 'hi sadaf', '2021-12-11 19:36:50', 'Shihab'),
+(7, 0, 'hi shihab', '2021-12-11 19:37:02', 'Sadaf');
 
 -- --------------------------------------------------------
 
@@ -65,6 +92,12 @@ INSERT INTO `users` (`Email`, `Username`, `Password`, `userType`, `ID`) VALUES
 --
 
 --
+-- Indexes for table `status`
+--
+ALTER TABLE `status`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -73,6 +106,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `status`
+--
+ALTER TABLE `status`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`

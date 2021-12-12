@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include 'config.php';
 //Variables using $ sign
 $uname = $_POST['username'];
@@ -24,6 +24,7 @@ $pass = $_POST['password'];
   // output data of each row
      while($row = $result->fetch_assoc()) {
         if($row['Password']==$pass){
+            $_SESSION["myid"] = $row;
             header ("location: homepage.php");
         }
   }
